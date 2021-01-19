@@ -44,16 +44,17 @@ Choose Feed Report
     # ${GetPlan} =     Get text after image ${PlanNo} for another 40 pixels 
     # Log To Console     ${GetPlan}
     sleep  2s
-    Input text and Press Enter in ${MaterialType} with -> ${MaterialInput}
+    SikuliUtils.Input text and Press Enter in ${MaterialType} with -> ${MaterialInput}
     sleep  1s
-    Input text and Press Enter in ${Farm} with -> ${FarmInput}
-    Input text and Press Enter in ${Sump} with -> ${SumpInput}
+    SikuliUtils.Input text and Press Enter in ${Farm} with -> ${FarmInput}
+    sleep  1s
+    SikuliUtils.Input text in ${Sump} with -> ${SumpInput}
     ${Number} =     Get random number for 3
-    Input text and Press Enter in ${Gen} with -> ${Number}
+    SikuliUtils.Input text in ${Gen} with -> ${Number}
     #Input text and Press Enter in ${Gen} with -> ${GenInput}
-    Input text and Press Enter in ${AverageSize} with -> ${AverageSizeInput}
-    Input text and Press Enter in ${InitialSize} with -> ${InitialSizeInput}
-    Input text and Press Enter in ${FinalSize} with -> ${FinalSizeInput}
+    SikuliUtils.Input text in ${AverageSize} with -> ${AverageSizeInput}
+    SikuliUtils.Input text in ${InitialSize} with -> ${InitialSizeInput}
+    SikuliUtils.Input text in ${FinalSize} with -> ${FinalSizeInput}
     Double Click in Area with Sikuli and Deleted then Input Text-> ${Weight1} ${Weight1} with -> ${WeightInput}
     Click Button with Sikuli -> ${SaveBtn} timeout ${3} sec.
     Click Button with Sikuli -> ${YesBtn1} timeout ${3} sec.

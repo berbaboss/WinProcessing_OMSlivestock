@@ -40,6 +40,7 @@ ${Key}                   Key.png
 ${RemainWeight}          RemainWeight.png   
 ${OweWeight}             OweWeight.png
 ${Scroll6}               Scroll6.png
+${Material1}             Material1.png
              
         
 #Input
@@ -51,15 +52,17 @@ ${MaterialInput1}        1120025
 *** Keywords ***
 Choose Purchase Plan From Sidebar
     Double Click in Area with Sikuli -> ${PurchasePlan} ${PurchasePlan}
-    Input text and Press Enter in ${PurchaseTeam} with -> ${PurchaseTeamInput}
+    SikuliUtils.Input text and Press Enter in ${PurchaseTeam} with -> ${PurchaseTeamInput}
     Click Button with Sikuli -> ${AddBtn1} timeout ${5} sec.
-    sleep     2s
-    Click Button with Sikuli -> ${Material} timeout ${5} sec.
-    Input text and Press Enter in ${Material} with -> ${MaterialInput1}
+    Sleep    2s
+    click in Area with Sikuli -> ${Material1} ${Material} 
+    SikuliUtils.Input text and Press Enter in ${Material} with -> ${MaterialInput1}
+    sleep    1s
     ${CatchDateInput} =      Get buddhist today
-    Input text and Press Enter in ${CatchDate} with -> ${CatchDateInput}
+    SikuliUtils.Input text and Press Enter in ${CatchDate} with -> ${CatchDateInput}
     sleep     1s
     click in Area with Sikuli -> ${SortButton1} ${SortButton2} 
+    Wait Until Screen Contain	${ClearButton}		20
     Click Button with Sikuli -> ${ClearButton} timeout ${3} sec.
     Click Button with Sikuli -> ${RequireButton} timeout ${3} sec.
     Click Button with Sikuli -> ${DescButton} timeout ${3} sec.
@@ -68,6 +71,7 @@ Choose Purchase Plan From Sidebar
     click Button with Sikuli -> ${OkBtn3} timeout ${3} sec. 
     click in Area with Sikuli -> ${ShrimpNeed} ${SelectBox} 
     click in Area with Sikuli -> ${SortButton3} ${SortButton2} 
+    Wait Until Screen Contain	${ClearButton}		20
     Click Button with Sikuli -> ${ClearButton} timeout ${3} sec.
     Click Button with Sikuli -> ${PlanHarvestDate} timeout ${3} sec.
     Click Button with Sikuli -> ${DescButton} timeout ${3} sec.

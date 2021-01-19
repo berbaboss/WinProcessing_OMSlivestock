@@ -50,13 +50,13 @@ Start Create Material Need Report
     SikuliLibrary.Press Special Key	ENTER
     sleep  2s
     SikuliLibrary.Input text	${EMPTY}	${FactoryInput}
-    Input text and Press Enter in ${MaterialType} with -> ${MaterialInput}
-    Input text and Press Enter in ${SizeBegin} with -> ${SizeBeginInput}
-    Input text and Press Enter in ${SizeEnd} with -> ${SizeEndInput}
-    Input text and Press Enter in ${ShrimpCondition} with -> ${ShrimpInput}
-    Input text and Press Enter in ${ShrimpType} with -> ${ShrimpTypeInput}
+    SikuliUtils.Input text and Press Enter in ${MaterialType} with -> ${MaterialInput}
+    SikuliUtils.Input text in ${SizeBegin} with -> ${SizeBeginInput}
+    SikuliUtils.Input text in ${SizeEnd} with -> ${SizeEndInput}
+    SikuliUtils.Input text in ${ShrimpCondition} with -> ${ShrimpInput}
+    SikuliUtils.Input text in ${ShrimpType} with -> ${ShrimpTypeInput}
     Double Click in Area with Sikuli and Deleted then Input Text-> ${Weight} ${Weight} with -> ${WeightInput}
-    Input text in ${Info} with -> ${InfoInput}
+    SikuliUtils.Input text in ${Info} with -> ${InfoInput}
     Click Button with Sikuli -> ${SaveBtn} timeout ${3} sec.
     Click Button with Sikuli -> ${YesBtn1} timeout ${3} sec.
     Click Button with Sikuli -> ${OkBtn1} timeout ${3} sec.

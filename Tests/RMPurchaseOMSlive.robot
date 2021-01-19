@@ -1,5 +1,5 @@
 *** Settings ***
-Library             SikuliLibrary    run_on_failure=AppiumLibrary.CapturePageScreenshot
+Library             SikuliLibrary    
 Library             AppiumLibrary
 Resource            ..\\Utils\\SikuliUtils.robot
 Resource		    ..\\Utils\\TestUtils.robot
@@ -41,8 +41,10 @@ Winprocessing UAT
     Choose Purchase Plan From Sidebar
     Create Catch Confirm Report
     Create Car Ride Report
+
+OMS Live Stock
+    Open App OMSLive
+    Login OMS Livestock
+    Choose Recieve Raw Material OMS
     Create Raw Material Report
-    Create Lab Test
-    Create Defect Test
-    Create Send Weight Report
-    Exit Program
+    Weight Manual Test

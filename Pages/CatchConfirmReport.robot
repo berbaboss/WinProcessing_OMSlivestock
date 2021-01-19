@@ -60,18 +60,18 @@ Create Catch Confirm Report
     Click Button with Sikuli -> ${Execute} timeout ${3} sec.
     Double Click in Area with Sikuli -> ${ArrowBtn1} ${ArrowBtn1}
     sleep    1s
-    Input text in ${CatchTeam} with -> ${CatchTeamInput}
+    SikuliUtils.Input text in ${CatchTeam} with -> ${CatchTeamInput}
     sleep    0.5s
-    Input text in ${PurchasePerson} with -> ${PurchasePersonInput}
+    SikuliUtils.Input text in ${PurchasePerson} with -> ${PurchasePersonInput}
     sleep    0.5s
-    Input text in ${CatchPerson} with -> ${CatchPersonInput}
+    SikuliUtils.Input text in ${CatchPerson} with -> ${CatchPersonInput}
     Click Button with Sikuli -> ${AddBtn2} timeout ${3} sec.
     Double Click in Area with Sikuli -> ${Klang} ${Klang}
     Click in Area with Sikuli -> ${PlateLin} ${File}
     Double Click in Area with Sikuli -> ${PlateLin1} ${ArrowBtn}
-    Input text in ${RoundNo} with -> ${RoundNoInput}
+    SikuliUtils.Input text in ${RoundNo} with -> ${RoundNoInput}
     Double Click in Area with Sikuli and Deleted then Input Text-> ${Weight} ${Weight} with -> ${WeightInput}
-    Input text and Press Enter in ${Cause} with -> ${CauseInput}
+    SikuliUtils.Input text and Press Enter in ${Cause} with -> ${CauseInput}
     sleep  1s
     Click Button with Sikuli -> ${SaveBtn2} timeout ${3} sec.
     Click Button with Sikuli -> ${YesBtn1} timeout ${3} sec.

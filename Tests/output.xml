@@ -1,140 +1,632 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 3.2.2 (Python 3.8.5 on win32)" generated="20210112 09:38:15.784" rpa="false">
-<suite id="s1" name="RMPurchase" source="C:\EclipsePortable-All-cpf\EclipsePortable\Data\workspace\WinProcessing RMPurchase\Tests\RMPurchase.robot">
-<test id="s1-t1" name="Winprocessing UAT">
-<kw name="Sikuli Test Setup" library="TestUtils" type="setup">
-<kw name="Add Needed Image Path" library="TestUtils">
-<kw name="Add Image Path" library="SikuliLibrary">
-<doc>Add image path</doc>
+<robot generator="Robot 3.2.2 (Python 3.8.5 on win32)" generated="20210118 15:54:59.480" rpa="false">
+<suite id="s1" name="RMPurchaseOMSliveVPN" source="C:\EclipsePortable-All-cpf\EclipsePortable\Data\workspace\WinProOMSlive\Tests\RMPurchaseOMSliveVPN.robot">
+<test id="s1-t1" name="Pulse Secure">
+<kw name="Open App VPN" library="OpenAppVPN">
+<kw name="Open Application" library="AppiumLibrary">
+<doc>Opens a new application to given Appium server.
+Capabilities of appium server, Android and iOS,
+Please check https://github.com/appium/appium/blob/master/docs/en/writing-running-appium/server-args.md
+| *Option*            | *Man.* | *Description*     |
+| remote_url          | Yes    | Appium server url |
+| alias               | no     | alias             |</doc>
 <arguments>
-<arg>${IMAGE_DIR}</arg>
+<arg>http://localhost:4723/wd/hub</arg>
+<arg>platformName=Android</arg>
+<arg>deviceName=emulator-5554</arg>
+<arg>appPackage=net.pulsesecure.pulsesecure</arg>
+<arg>appActivity=net.pulsesecure.pws.ui.PSActivity</arg>
+<arg>automationName=Uiautomator2</arg>
 </arguments>
-<msg timestamp="20210112 09:38:18.221" level="INFO">Params: [C:\EclipsePortable-All-cpf\EclipsePortable\Data\workspace\WinProcessing RMPurchase\Tests\..\Images]</msg>
-<status status="PASS" starttime="20210112 09:38:18.208" endtime="20210112 09:38:18.221"></status>
+<status status="PASS" starttime="20210118 15:55:02.428" endtime="20210118 15:55:15.293"></status>
 </kw>
-<status status="PASS" starttime="20210112 09:38:18.207" endtime="20210112 09:38:18.221"></status>
+<status status="PASS" starttime="20210118 15:55:02.427" endtime="20210118 15:55:15.293"></status>
 </kw>
-<kw name="Set Move Mouse Delay" library="SikuliLibrary">
-<doc>Set move mouse delay</doc>
+<kw name="Login VPN" library="LoginVPN">
+<kw name="Click Element with Appium -&gt; ${AddConnection} timeout 10 sec." library="AppiumUtils">
+<kw name="Wait Until Page Contains Element" library="AppiumLibrary">
+<doc>Waits until element specified with `locator` appears on current page.</doc>
 <arguments>
-<arg>0.15</arg>
-</arguments>
-<msg timestamp="20210112 09:38:18.224" level="INFO">Params: [0.15]</msg>
-<status status="PASS" starttime="20210112 09:38:18.221" endtime="20210112 09:38:18.224"></status>
-</kw>
-<status status="PASS" starttime="20210112 09:38:18.207" endtime="20210112 09:38:18.224"></status>
-</kw>
-<kw name="Open Remote Desktop" library="LoginPage">
-<kw name="Click Button with Sikuli -&gt; ${StartBtn} timeout ${3} sec." library="SikuliUtils">
-<kw name="Wait Until Screen Contain" library="SikuliLibrary">
-<doc>Wait until screen contain
- Wait until image shown in screen</doc>
-<arguments>
-<arg>${image}</arg>
+<arg>${path}</arg>
 <arg>${sec}</arg>
 </arguments>
-<msg timestamp="20210112 09:38:18.717" level="INFO">Params: [StartBtn.png, 3]</msg>
-<msg timestamp="20210112 09:38:18.717" level="INFO" html="yes">&lt;img src='sikuli_captured/sikuliximage-1610419098707.png'/&gt;</msg>
-<status status="PASS" starttime="20210112 09:38:18.225" endtime="20210112 09:38:18.717"></status>
+<status status="PASS" starttime="20210118 15:55:15.295" endtime="20210118 15:55:15.864"></status>
 </kw>
-<kw name="Click" library="SikuliLibrary">
-<doc>Click</doc>
+<kw name="Click Element" library="AppiumLibrary">
+<doc>Click element identified by `locator`.</doc>
 <arguments>
-<arg>${image}</arg>
+<arg>${path}</arg>
 </arguments>
-<msg timestamp="20210112 09:38:19.131" level="INFO">Params: [StartBtn.png]</msg>
-<msg timestamp="20210112 09:38:19.132" level="INFO" html="yes">&lt;img src='sikuli_captured/sikuliximage-1610419098833.png'/&gt;
-[log] CLICK on L[24,748]@S(0) (209 msec)</msg>
-<status status="PASS" starttime="20210112 09:38:18.717" endtime="20210112 09:38:19.132"></status>
+<msg timestamp="20210118 15:55:15.870" level="INFO">Clicking element 'net.pulsesecure.pulsesecure:id/link_go'.</msg>
+<status status="PASS" starttime="20210118 15:55:15.864" endtime="20210118 15:55:15.959"></status>
 </kw>
-<status status="PASS" starttime="20210112 09:38:18.225" endtime="20210112 09:38:19.132"></status>
+<status status="PASS" starttime="20210118 15:55:15.294" endtime="20210118 15:55:15.959"></status>
 </kw>
-<kw name="Input text and Press Enter in ${texField} with -&gt; ${Input}" library="SikuliUtils">
-<kw name="Wait Until Screen Contain" library="SikuliLibrary">
-<doc>Wait until screen contain
- Wait until image shown in screen</doc>
+<kw name="Input text in ${ConnectionName} with -&gt; ${ConnectionNameInput}" library="AppiumUtils">
+<kw name="Wait Until Page Contains Element" library="AppiumLibrary">
+<doc>Waits until element specified with `locator` appears on current page.</doc>
 <arguments>
 <arg>${texField}</arg>
-<arg>20</arg>
 </arguments>
-<msg timestamp="20210112 09:38:19.319" level="INFO">Params: [InputText.png, 20]</msg>
-<msg timestamp="20210112 09:38:19.319" level="INFO" html="yes">&lt;img src='sikuli_captured/sikuliximage-1610419099297.png'/&gt;</msg>
-<status status="PASS" starttime="20210112 09:38:19.133" endtime="20210112 09:38:19.319"></status>
+<status status="PASS" starttime="20210118 15:55:15.960" endtime="20210118 15:55:16.948"></status>
 </kw>
-<kw name="Click In" library="SikuliLibrary">
-<doc>Click in. 
-Click target image in area image.</doc>
+<kw name="Click Element" library="AppiumLibrary">
+<doc>Click element identified by `locator`.</doc>
 <arguments>
 <arg>${texField}</arg>
-<arg>${texField}</arg>
 </arguments>
-<msg timestamp="20210112 09:38:19.735" level="INFO">Params: [InputText.png, InputText.png]</msg>
-<msg timestamp="20210112 09:38:19.735" level="INFO" html="yes">&lt;img src='sikuli_captured/sikuliximage-1610419099469.png'/&gt;
-InputText.png is found!</msg>
-<msg timestamp="20210112 09:38:19.735" level="INFO" html="yes">&lt;img src='sikuli_captured/sikuliximage-1610419099515.png'/&gt;
-[log] CLICK on L[145,749]@S(0) (198 msec)</msg>
-<status status="PASS" starttime="20210112 09:38:19.320" endtime="20210112 09:38:19.735"></status>
+<msg timestamp="20210118 15:55:16.951" level="INFO">Clicking element '//android.widget.EditText[@content-desc="Connection Name"]'.</msg>
+<status status="PASS" starttime="20210118 15:55:16.948" endtime="20210118 15:55:18.646"></status>
 </kw>
-<kw name="Input Text" library="SikuliLibrary">
-<doc>Input text
- Image could be empty</doc>
+<kw name="Input Text" library="AppiumLibrary">
+<doc>Types the given `text` into text field identified by `locator`.</doc>
 <arguments>
 <arg>${texField}</arg>
 <arg>${data}</arg>
 </arguments>
-<msg timestamp="20210112 09:38:20.353" level="INFO">Params: [InputText.png, mstsc]
-Input Text:
-mstsc</msg>
-<msg timestamp="20210112 09:38:20.353" level="INFO" html="yes">&lt;img src='sikuli_captured/sikuliximage-1610419099904.png'/&gt;
-[log] CLICK on L[145,749]@S(0) (31 msec)
-[log]  TYPE "mstsc"
-Params: [InputText.png, mstsc]
-Input Text:
-mstsc</msg>
-<msg timestamp="20210112 09:38:20.353" level="INFO" html="yes">&lt;img src='sikuli_captured/sikuliximage-1610419100199.png'/&gt;
-[log] CLICK on L[145,749]@S(0) (59 msec)
-[log]  TYPE "mstsc"</msg>
-<msg timestamp="20210112 09:38:20.353" level="FAIL">java.lang.IllegalArgumentException: Key: Not supported character: m</msg>
-<status status="FAIL" starttime="20210112 09:38:19.736" endtime="20210112 09:38:20.353"></status>
+<msg timestamp="20210118 15:55:18.650" level="INFO">Typing text 'https://ivpn.cpf.co.th/cpfit' into text field '//android.widget.EditText[@content-desc="Connection Name"]'</msg>
+<status status="PASS" starttime="20210118 15:55:18.646" endtime="20210118 15:55:19.393"></status>
 </kw>
-<status status="FAIL" starttime="20210112 09:38:19.132" endtime="20210112 09:38:20.353"></status>
+<status status="PASS" starttime="20210118 15:55:15.960" endtime="20210118 15:55:19.393"></status>
 </kw>
-<status status="FAIL" starttime="20210112 09:38:18.224" endtime="20210112 09:38:20.353"></status>
-</kw>
-<kw name="Sikuli Test Teardown" library="TestUtils" type="teardown">
-<kw name="Stop Sikuli Server" library="TestUtils">
-<kw name="Stop Remote Server" library="SikuliLibrary">
-<doc>Stops the remote server.</doc>
-<msg timestamp="20210112 09:38:20.363" level="INFO">Robot Framework remote server stopping</msg>
-<status status="PASS" starttime="20210112 09:38:20.358" endtime="20210112 09:38:20.363"></status>
-</kw>
-<status status="PASS" starttime="20210112 09:38:20.358" endtime="20210112 09:38:20.363"></status>
-</kw>
-<kw name="Close Application" library="SikuliLibrary">
-<doc>Close application</doc>
+<kw name="Input text in ${URL} with -&gt; ${URLInput}" library="AppiumUtils">
+<kw name="Wait Until Page Contains Element" library="AppiumLibrary">
+<doc>Waits until element specified with `locator` appears on current page.</doc>
 <arguments>
-<arg>${citrix application}</arg>
+<arg>${texField}</arg>
 </arguments>
-<msg timestamp="20210112 09:38:20.375" level="INFO">Params: [wfica32.exe]</msg>
-<status status="PASS" starttime="20210112 09:38:20.363" endtime="20210112 09:38:20.376"></status>
+<status status="PASS" starttime="20210118 15:55:19.394" endtime="20210118 15:55:20.304"></status>
 </kw>
-<status status="PASS" starttime="20210112 09:38:20.358" endtime="20210112 09:38:20.376"></status>
+<kw name="Click Element" library="AppiumLibrary">
+<doc>Click element identified by `locator`.</doc>
+<arguments>
+<arg>${texField}</arg>
+</arguments>
+<msg timestamp="20210118 15:55:20.307" level="INFO">Clicking element '//android.widget.EditText[@content-desc="URL"]'.</msg>
+<status status="PASS" starttime="20210118 15:55:20.304" endtime="20210118 15:55:20.994"></status>
 </kw>
-<status status="FAIL" starttime="20210112 09:38:18.207" endtime="20210112 09:38:20.376" critical="yes">java.lang.IllegalArgumentException: Key: Not supported character: m</status>
+<kw name="Input Text" library="AppiumLibrary">
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<arguments>
+<arg>${texField}</arg>
+<arg>${data}</arg>
+</arguments>
+<msg timestamp="20210118 15:55:20.998" level="INFO">Typing text 'https://ivpn.cpf.co.th/cpfit' into text field '//android.widget.EditText[@content-desc="URL"]'</msg>
+<status status="PASS" starttime="20210118 15:55:20.994" endtime="20210118 15:55:21.717"></status>
+</kw>
+<status status="PASS" starttime="20210118 15:55:19.393" endtime="20210118 15:55:21.717"></status>
+</kw>
+<kw name="Input text in ${UsernameVPN} with -&gt; ${UsernameVPNInput}" library="AppiumUtils">
+<kw name="Wait Until Page Contains Element" library="AppiumLibrary">
+<doc>Waits until element specified with `locator` appears on current page.</doc>
+<arguments>
+<arg>${texField}</arg>
+</arguments>
+<status status="PASS" starttime="20210118 15:55:21.718" endtime="20210118 15:55:22.624"></status>
+</kw>
+<kw name="Click Element" library="AppiumLibrary">
+<doc>Click element identified by `locator`.</doc>
+<arguments>
+<arg>${texField}</arg>
+</arguments>
+<msg timestamp="20210118 15:55:22.628" level="INFO">Clicking element '//android.widget.EditText[@content-desc="Username"]'.</msg>
+<status status="PASS" starttime="20210118 15:55:22.625" endtime="20210118 15:55:23.326"></status>
+</kw>
+<kw name="Input Text" library="AppiumLibrary">
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<arguments>
+<arg>${texField}</arg>
+<arg>${data}</arg>
+</arguments>
+<msg timestamp="20210118 15:55:23.333" level="INFO">Typing text 'rujirot.phu' into text field '//android.widget.EditText[@content-desc="Username"]'</msg>
+<status status="PASS" starttime="20210118 15:55:23.326" endtime="20210118 15:55:24.049"></status>
+</kw>
+<status status="PASS" starttime="20210118 15:55:21.718" endtime="20210118 15:55:24.049"></status>
+</kw>
+<kw name="Click Element with Appium -&gt; ${AddButton1} timeout 10 sec." library="AppiumUtils">
+<kw name="Wait Until Page Contains Element" library="AppiumLibrary">
+<doc>Waits until element specified with `locator` appears on current page.</doc>
+<arguments>
+<arg>${path}</arg>
+<arg>${sec}</arg>
+</arguments>
+<status status="PASS" starttime="20210118 15:55:24.050" endtime="20210118 15:55:24.715"></status>
+</kw>
+<kw name="Click Element" library="AppiumLibrary">
+<doc>Click element identified by `locator`.</doc>
+<arguments>
+<arg>${path}</arg>
+</arguments>
+<msg timestamp="20210118 15:55:24.719" level="INFO">Clicking element '//android.widget.Button[@text="Add"]'.</msg>
+<status status="PASS" starttime="20210118 15:55:24.715" endtime="20210118 15:55:24.804"></status>
+</kw>
+<status status="PASS" starttime="20210118 15:55:24.050" endtime="20210118 15:55:24.804"></status>
+</kw>
+<kw name="Click Element with Appium -&gt; ${ConnectBtn} timeout 10 sec." library="AppiumUtils">
+<kw name="Wait Until Page Contains Element" library="AppiumLibrary">
+<doc>Waits until element specified with `locator` appears on current page.</doc>
+<arguments>
+<arg>${path}</arg>
+<arg>${sec}</arg>
+</arguments>
+<status status="PASS" starttime="20210118 15:55:24.805" endtime="20210118 15:55:25.859"></status>
+</kw>
+<kw name="Click Element" library="AppiumLibrary">
+<doc>Click element identified by `locator`.</doc>
+<arguments>
+<arg>${path}</arg>
+</arguments>
+<msg timestamp="20210118 15:55:25.863" level="INFO">Clicking element '//android.widget.Button[@text="Connect"]'.</msg>
+<status status="PASS" starttime="20210118 15:55:25.859" endtime="20210118 15:55:25.935"></status>
+</kw>
+<status status="PASS" starttime="20210118 15:55:24.805" endtime="20210118 15:55:25.935"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>5s</arg>
+</arguments>
+<msg timestamp="20210118 15:55:30.941" level="INFO">Slept 5 seconds</msg>
+<status status="PASS" starttime="20210118 15:55:25.935" endtime="20210118 15:55:30.941"></status>
+</kw>
+<status status="PASS" starttime="20210118 15:55:15.294" endtime="20210118 15:55:30.942"></status>
+</kw>
+<kw name="Connect VPN" library="LoginVPN">
+<kw name="Input text in ${PasswordVPN} with -&gt; ${PasswordVPNInput}" library="AppiumUtils">
+<kw name="Wait Until Page Contains Element" library="AppiumLibrary">
+<doc>Waits until element specified with `locator` appears on current page.</doc>
+<arguments>
+<arg>${texField}</arg>
+</arguments>
+<status status="PASS" starttime="20210118 15:55:30.945" endtime="20210118 15:55:30.988"></status>
+</kw>
+<kw name="Click Element" library="AppiumLibrary">
+<doc>Click element identified by `locator`.</doc>
+<arguments>
+<arg>${texField}</arg>
+</arguments>
+<msg timestamp="20210118 15:55:30.991" level="INFO">Clicking element '//android.widget.EditText[@text="Password"]'.</msg>
+<status status="PASS" starttime="20210118 15:55:30.988" endtime="20210118 15:55:31.079"></status>
+</kw>
+<kw name="Input Text" library="AppiumLibrary">
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<arguments>
+<arg>${texField}</arg>
+<arg>${data}</arg>
+</arguments>
+<msg timestamp="20210118 15:55:31.083" level="INFO">Typing text '1100800965041@P' into text field '//android.widget.EditText[@text="Password"]'</msg>
+<status status="PASS" starttime="20210118 15:55:31.079" endtime="20210118 15:55:31.774"></status>
+</kw>
+<status status="PASS" starttime="20210118 15:55:30.944" endtime="20210118 15:55:31.774"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>10s</arg>
+</arguments>
+<msg timestamp="20210118 15:55:41.777" level="INFO">Slept 10 seconds</msg>
+<status status="PASS" starttime="20210118 15:55:31.775" endtime="20210118 15:55:41.777"></status>
+</kw>
+<kw name="Click Element with Appium -&gt; ${SigninBtn} timeout 10 sec." library="AppiumUtils">
+<kw name="Wait Until Page Contains Element" library="AppiumLibrary">
+<doc>Waits until element specified with `locator` appears on current page.</doc>
+<arguments>
+<arg>${path}</arg>
+<arg>${sec}</arg>
+</arguments>
+<status status="PASS" starttime="20210118 15:55:41.777" endtime="20210118 15:55:41.826"></status>
+</kw>
+<kw name="Click Element" library="AppiumLibrary">
+<doc>Click element identified by `locator`.</doc>
+<arguments>
+<arg>${path}</arg>
+</arguments>
+<msg timestamp="20210118 15:55:41.830" level="INFO">Clicking element '//android.widget.Button[@text="Sign In"]'.</msg>
+<status status="PASS" starttime="20210118 15:55:41.826" endtime="20210118 15:55:41.919"></status>
+</kw>
+<status status="PASS" starttime="20210118 15:55:41.777" endtime="20210118 15:55:41.920"></status>
+</kw>
+<kw name="Click Element with Appium -&gt; ${ContinueBtn} timeout 10 sec." library="AppiumUtils">
+<kw name="Wait Until Page Contains Element" library="AppiumLibrary">
+<doc>Waits until element specified with `locator` appears on current page.</doc>
+<arguments>
+<arg>${path}</arg>
+<arg>${sec}</arg>
+</arguments>
+<status status="PASS" starttime="20210118 15:55:41.920" endtime="20210118 15:55:46.647"></status>
+</kw>
+<kw name="Click Element" library="AppiumLibrary">
+<doc>Click element identified by `locator`.</doc>
+<arguments>
+<arg>${path}</arg>
+</arguments>
+<msg timestamp="20210118 15:55:46.651" level="INFO">Clicking element '//android.view.View[@content-desc="Continue the session"]'.</msg>
+<status status="PASS" starttime="20210118 15:55:46.647" endtime="20210118 15:55:46.738"></status>
+</kw>
+<status status="PASS" starttime="20210118 15:55:41.920" endtime="20210118 15:55:46.738"></status>
+</kw>
+<status status="PASS" starttime="20210118 15:55:30.943" endtime="20210118 15:55:46.738"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>10s</arg>
+</arguments>
+<msg timestamp="20210118 15:55:56.748" level="INFO">Slept 10 seconds</msg>
+<status status="PASS" starttime="20210118 15:55:46.739" endtime="20210118 15:55:56.748"></status>
+</kw>
+<status status="PASS" starttime="20210118 15:55:02.427" endtime="20210118 15:55:56.749" critical="yes"></status>
 </test>
-<status status="FAIL" starttime="20210112 09:38:15.799" endtime="20210112 09:38:20.378"></status>
+<test id="s1-t2" name="Android Tablet OMSLivestock">
+<kw name="Open App OMSLive" library="OpenAppOMS">
+<kw name="Open Application" library="AppiumLibrary">
+<doc>Opens a new application to given Appium server.
+Capabilities of appium server, Android and iOS,
+Please check https://github.com/appium/appium/blob/master/docs/en/writing-running-appium/server-args.md
+| *Option*            | *Man.* | *Description*     |
+| remote_url          | Yes    | Appium server url |
+| alias               | no     | alias             |</doc>
+<arguments>
+<arg>http://localhost:4723/wd/hub</arg>
+<arg>platformName=Android</arg>
+<arg>deviceName=emulator-5554</arg>
+<arg>appPackage=com.cpfit.oms_livestock</arg>
+<arg>appActivity=com.example.oms_livestock.MainActivity</arg>
+<arg>automationName=Uiautomator2</arg>
+</arguments>
+<status status="PASS" starttime="20210118 15:55:56.754" endtime="20210118 15:56:09.974"></status>
+</kw>
+<status status="PASS" starttime="20210118 15:55:56.754" endtime="20210118 15:56:09.974"></status>
+</kw>
+<kw name="Login OMS Livestock" library="LoginPageOMS">
+<kw name="Click Element with Appium -&gt; ${Btn1} timeout 10 sec." library="AppiumUtils">
+<kw name="Wait Until Page Contains Element" library="AppiumLibrary">
+<doc>Waits until element specified with `locator` appears on current page.</doc>
+<arguments>
+<arg>${path}</arg>
+<arg>${sec}</arg>
+</arguments>
+<status status="PASS" starttime="20210118 15:56:09.975" endtime="20210118 15:56:10.221"></status>
+</kw>
+<kw name="Click Element" library="AppiumLibrary">
+<doc>Click element identified by `locator`.</doc>
+<arguments>
+<arg>${path}</arg>
+</arguments>
+<msg timestamp="20210118 15:56:10.224" level="INFO">Clicking element 'com.android.permissioncontroller:id/permission_allow_foreground_only_button'.</msg>
+<status status="PASS" starttime="20210118 15:56:10.221" endtime="20210118 15:56:10.294"></status>
+</kw>
+<status status="PASS" starttime="20210118 15:56:09.975" endtime="20210118 15:56:10.294"></status>
+</kw>
+<kw name="Click Element with Appium -&gt; ${Btn2} timeout 10 sec." library="AppiumUtils">
+<kw name="Wait Until Page Contains Element" library="AppiumLibrary">
+<doc>Waits until element specified with `locator` appears on current page.</doc>
+<arguments>
+<arg>${path}</arg>
+<arg>${sec}</arg>
+</arguments>
+<status status="PASS" starttime="20210118 15:56:10.295" endtime="20210118 15:56:10.338"></status>
+</kw>
+<kw name="Click Element" library="AppiumLibrary">
+<doc>Click element identified by `locator`.</doc>
+<arguments>
+<arg>${path}</arg>
+</arguments>
+<msg timestamp="20210118 15:56:10.341" level="INFO">Clicking element 'com.android.permissioncontroller:id/permission_allow_button'.</msg>
+<status status="PASS" starttime="20210118 15:56:10.338" endtime="20210118 15:56:11.087"></status>
+</kw>
+<status status="PASS" starttime="20210118 15:56:10.294" endtime="20210118 15:56:11.087"></status>
+</kw>
+<kw name="Wait Until Page Contains Element" library="AppiumLibrary">
+<doc>Waits until element specified with `locator` appears on current page.</doc>
+<arguments>
+<arg>${CPFThailand}</arg>
+<arg>60</arg>
+</arguments>
+<status status="PASS" starttime="20210118 15:56:11.087" endtime="20210118 15:56:17.842"></status>
+</kw>
+<kw name="Click Element with Appium -&gt; ${UserId} timeout 10 sec." library="AppiumUtils">
+<kw name="Wait Until Page Contains Element" library="AppiumLibrary">
+<doc>Waits until element specified with `locator` appears on current page.</doc>
+<arguments>
+<arg>${path}</arg>
+<arg>${sec}</arg>
+</arguments>
+<status status="PASS" starttime="20210118 15:56:17.843" endtime="20210118 15:56:17.872"></status>
+</kw>
+<kw name="Click Element" library="AppiumLibrary">
+<doc>Click element identified by `locator`.</doc>
+<arguments>
+<arg>${path}</arg>
+</arguments>
+<msg timestamp="20210118 15:56:17.876" level="INFO">Clicking element '//android.widget.EditText[@text="User ID"]'.</msg>
+<status status="PASS" starttime="20210118 15:56:17.873" endtime="20210118 15:56:17.954"></status>
+</kw>
+<status status="PASS" starttime="20210118 15:56:17.842" endtime="20210118 15:56:17.954"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>2</arg>
+</arguments>
+<msg timestamp="20210118 15:56:19.967" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20210118 15:56:17.955" endtime="20210118 15:56:19.967"></status>
+</kw>
+<kw name="Press Keycode" library="AppiumLibrary">
+<doc>Sends a press of keycode to the device.</doc>
+<arguments>
+<arg>46</arg>
+</arguments>
+<status status="PASS" starttime="20210118 15:56:19.967" endtime="20210118 15:56:20.020"></status>
+</kw>
+<kw name="Press Keycode" library="AppiumLibrary">
+<doc>Sends a press of keycode to the device.</doc>
+<arguments>
+<arg>49</arg>
+</arguments>
+<status status="PASS" starttime="20210118 15:56:20.020" endtime="20210118 15:56:20.066"></status>
+</kw>
+<kw name="Press Keycode" library="AppiumLibrary">
+<doc>Sends a press of keycode to the device.</doc>
+<arguments>
+<arg>38</arg>
+</arguments>
+<status status="PASS" starttime="20210118 15:56:20.066" endtime="20210118 15:56:20.118"></status>
+</kw>
+<kw name="Press Keycode" library="AppiumLibrary">
+<doc>Sends a press of keycode to the device.</doc>
+<arguments>
+<arg>37</arg>
+</arguments>
+<status status="PASS" starttime="20210118 15:56:20.118" endtime="20210118 15:56:20.169"></status>
+</kw>
+<kw name="Press Keycode" library="AppiumLibrary">
+<doc>Sends a press of keycode to the device.</doc>
+<arguments>
+<arg>46</arg>
+</arguments>
+<status status="PASS" starttime="20210118 15:56:20.169" endtime="20210118 15:56:21.018"></status>
+</kw>
+<kw name="Press Keycode" library="AppiumLibrary">
+<doc>Sends a press of keycode to the device.</doc>
+<arguments>
+<arg>43</arg>
+</arguments>
+<status status="PASS" starttime="20210118 15:56:21.019" endtime="20210118 15:56:21.053"></status>
+</kw>
+<kw name="Press Keycode" library="AppiumLibrary">
+<doc>Sends a press of keycode to the device.</doc>
+<arguments>
+<arg>48</arg>
+</arguments>
+<status status="PASS" starttime="20210118 15:56:21.054" endtime="20210118 15:56:21.105"></status>
+</kw>
+<kw name="Press Keycode" library="AppiumLibrary">
+<doc>Sends a press of keycode to the device.</doc>
+<arguments>
+<arg>56</arg>
+</arguments>
+<status status="PASS" starttime="20210118 15:56:21.106" endtime="20210118 15:56:22.071"></status>
+</kw>
+<kw name="Press Keycode" library="AppiumLibrary">
+<doc>Sends a press of keycode to the device.</doc>
+<arguments>
+<arg>44</arg>
+</arguments>
+<status status="PASS" starttime="20210118 15:56:22.071" endtime="20210118 15:56:22.137"></status>
+</kw>
+<kw name="Press Keycode" library="AppiumLibrary">
+<doc>Sends a press of keycode to the device.</doc>
+<arguments>
+<arg>36</arg>
+</arguments>
+<status status="PASS" starttime="20210118 15:56:22.137" endtime="20210118 15:56:22.739"></status>
+</kw>
+<kw name="Press Keycode" library="AppiumLibrary">
+<doc>Sends a press of keycode to the device.</doc>
+<arguments>
+<arg>49</arg>
+</arguments>
+<status status="PASS" starttime="20210118 15:56:22.739" endtime="20210118 15:56:22.785"></status>
+</kw>
+<kw name="Click Element with Appium -&gt; ${PasswordOMS} timeout 10 sec." library="AppiumUtils">
+<kw name="Wait Until Page Contains Element" library="AppiumLibrary">
+<doc>Waits until element specified with `locator` appears on current page.</doc>
+<arguments>
+<arg>${path}</arg>
+<arg>${sec}</arg>
+</arguments>
+<status status="PASS" starttime="20210118 15:56:22.787" endtime="20210118 15:56:23.323"></status>
+</kw>
+<kw name="Click Element" library="AppiumLibrary">
+<doc>Click element identified by `locator`.</doc>
+<arguments>
+<arg>${path}</arg>
+</arguments>
+<msg timestamp="20210118 15:56:23.327" level="INFO">Clicking element '//android.widget.EditText[@text="Password"]'.</msg>
+<status status="PASS" starttime="20210118 15:56:23.323" endtime="20210118 15:56:23.386"></status>
+</kw>
+<status status="PASS" starttime="20210118 15:56:22.785" endtime="20210118 15:56:23.386"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>2</arg>
+</arguments>
+<msg timestamp="20210118 15:56:25.403" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20210118 15:56:23.386" endtime="20210118 15:56:25.403"></status>
+</kw>
+<kw name="Press Keycode" library="AppiumLibrary">
+<doc>Sends a press of keycode to the device.</doc>
+<arguments>
+<arg>8</arg>
+</arguments>
+<status status="PASS" starttime="20210118 15:56:25.403" endtime="20210118 15:56:25.451"></status>
+</kw>
+<kw name="Press Keycode" library="AppiumLibrary">
+<doc>Sends a press of keycode to the device.</doc>
+<arguments>
+<arg>8</arg>
+</arguments>
+<status status="PASS" starttime="20210118 15:56:25.451" endtime="20210118 15:56:25.487"></status>
+</kw>
+<kw name="Press Keycode" library="AppiumLibrary">
+<doc>Sends a press of keycode to the device.</doc>
+<arguments>
+<arg>7</arg>
+</arguments>
+<status status="PASS" starttime="20210118 15:56:25.488" endtime="20210118 15:56:26.051"></status>
+</kw>
+<kw name="Press Keycode" library="AppiumLibrary">
+<doc>Sends a press of keycode to the device.</doc>
+<arguments>
+<arg>7</arg>
+</arguments>
+<status status="PASS" starttime="20210118 15:56:26.052" endtime="20210118 15:56:26.108"></status>
+</kw>
+<kw name="Press Keycode" library="AppiumLibrary">
+<doc>Sends a press of keycode to the device.</doc>
+<arguments>
+<arg>15</arg>
+</arguments>
+<status status="PASS" starttime="20210118 15:56:26.108" endtime="20210118 15:56:26.618"></status>
+</kw>
+<kw name="Press Keycode" library="AppiumLibrary">
+<doc>Sends a press of keycode to the device.</doc>
+<arguments>
+<arg>7</arg>
+</arguments>
+<status status="PASS" starttime="20210118 15:56:26.619" endtime="20210118 15:56:26.653"></status>
+</kw>
+<kw name="Press Keycode" library="AppiumLibrary">
+<doc>Sends a press of keycode to the device.</doc>
+<arguments>
+<arg>7</arg>
+</arguments>
+<status status="PASS" starttime="20210118 15:56:26.653" endtime="20210118 15:56:27.184"></status>
+</kw>
+<kw name="Press Keycode" library="AppiumLibrary">
+<doc>Sends a press of keycode to the device.</doc>
+<arguments>
+<arg>16</arg>
+</arguments>
+<status status="PASS" starttime="20210118 15:56:27.184" endtime="20210118 15:56:27.229"></status>
+</kw>
+<kw name="Press Keycode" library="AppiumLibrary">
+<doc>Sends a press of keycode to the device.</doc>
+<arguments>
+<arg>13</arg>
+</arguments>
+<status status="PASS" starttime="20210118 15:56:27.230" endtime="20210118 15:56:27.769"></status>
+</kw>
+<kw name="Press Keycode" library="AppiumLibrary">
+<doc>Sends a press of keycode to the device.</doc>
+<arguments>
+<arg>12</arg>
+</arguments>
+<status status="PASS" starttime="20210118 15:56:27.770" endtime="20210118 15:56:28.302"></status>
+</kw>
+<kw name="Press Keycode" library="AppiumLibrary">
+<doc>Sends a press of keycode to the device.</doc>
+<arguments>
+<arg>7</arg>
+</arguments>
+<status status="PASS" starttime="20210118 15:56:28.302" endtime="20210118 15:56:28.836"></status>
+</kw>
+<kw name="Press Keycode" library="AppiumLibrary">
+<doc>Sends a press of keycode to the device.</doc>
+<arguments>
+<arg>11</arg>
+</arguments>
+<status status="PASS" starttime="20210118 15:56:28.836" endtime="20210118 15:56:29.370"></status>
+</kw>
+<kw name="Press Keycode" library="AppiumLibrary">
+<doc>Sends a press of keycode to the device.</doc>
+<arguments>
+<arg>8</arg>
+</arguments>
+<status status="PASS" starttime="20210118 15:56:29.370" endtime="20210118 15:56:29.902"></status>
+</kw>
+<kw name="Press Keycode" library="AppiumLibrary">
+<doc>Sends a press of keycode to the device.</doc>
+<arguments>
+<arg>77</arg>
+</arguments>
+<status status="PASS" starttime="20210118 15:56:29.903" endtime="20210118 15:56:29.938"></status>
+</kw>
+<kw name="Press Keycode" library="AppiumLibrary">
+<doc>Sends a press of keycode to the device.</doc>
+<arguments>
+<arg>44</arg>
+<arg>1</arg>
+</arguments>
+<status status="PASS" starttime="20210118 15:56:29.938" endtime="20210118 15:56:30.472"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>1s</arg>
+</arguments>
+<msg timestamp="20210118 15:56:31.479" level="INFO">Slept 1 second</msg>
+<status status="PASS" starttime="20210118 15:56:30.472" endtime="20210118 15:56:31.479"></status>
+</kw>
+<kw name="Click Element with Appium -&gt; ${LoginBtn} timeout 10 sec." library="AppiumUtils">
+<kw name="Wait Until Page Contains Element" library="AppiumLibrary">
+<doc>Waits until element specified with `locator` appears on current page.</doc>
+<arguments>
+<arg>${path}</arg>
+<arg>${sec}</arg>
+</arguments>
+<status status="PASS" starttime="20210118 15:56:31.481" endtime="20210118 15:56:31.502"></status>
+</kw>
+<kw name="Click Element" library="AppiumLibrary">
+<doc>Click element identified by `locator`.</doc>
+<arguments>
+<arg>${path}</arg>
+</arguments>
+<msg timestamp="20210118 15:56:31.506" level="INFO">Clicking element '//android.view.View[@content-desc="Sign In"]'.</msg>
+<status status="PASS" starttime="20210118 15:56:31.503" endtime="20210118 15:56:31.570"></status>
+</kw>
+<status status="PASS" starttime="20210118 15:56:31.480" endtime="20210118 15:56:31.570"></status>
+</kw>
+<kw name="Wait Until Page Contains Element" library="AppiumLibrary">
+<doc>Waits until element specified with `locator` appears on current page.</doc>
+<arguments>
+<arg>${Menu}</arg>
+<arg>40</arg>
+</arguments>
+<kw name="Capture Page Screenshot" library="AppiumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into the log.</doc>
+<msg timestamp="20210118 15:56:47.053" level="FAIL">WebDriverException: Message: An unknown server-side error occurred while processing the command. Original error: Could not proxy command to the remote server. Original error: socket hang up
+</msg>
+<status status="FAIL" starttime="20210118 15:56:47.035" endtime="20210118 15:56:47.053"></status>
+</kw>
+<msg timestamp="20210118 15:56:47.058" level="WARN">Keyword 'AppiumLibrary.CapturePageScreenshot' could not be run on failure: WebDriverException: Message: An unknown server-side error occurred while processing the command. Original error: Could not proxy command to the remote server. Original error: socket hang up
+</msg>
+<msg timestamp="20210118 15:56:47.061" level="FAIL">WebDriverException: Message: An unknown server-side error occurred while processing the command. Original error: Could not proxy command to the remote server. Original error: socket hang up
+</msg>
+<status status="FAIL" starttime="20210118 15:56:31.570" endtime="20210118 15:56:47.061"></status>
+</kw>
+<status status="FAIL" starttime="20210118 15:56:09.974" endtime="20210118 15:56:47.062"></status>
+</kw>
+<status status="FAIL" starttime="20210118 15:55:56.754" endtime="20210118 15:56:47.062" critical="yes">WebDriverException: Message: An unknown server-side error occurred while processing the command. Original error: Could not proxy command to the remote server. Original error: socket hang up
+</status>
+</test>
+<status status="FAIL" starttime="20210118 15:54:59.484" endtime="20210118 15:56:47.078"></status>
 </suite>
 <statistics>
 <total>
-<stat pass="0" fail="1">Critical Tests</stat>
-<stat pass="0" fail="1">All Tests</stat>
+<stat pass="1" fail="1">Critical Tests</stat>
+<stat pass="1" fail="1">All Tests</stat>
 </total>
 <tag>
 </tag>
 <suite>
-<stat pass="0" fail="1" id="s1" name="RMPurchase">RMPurchase</stat>
+<stat pass="1" fail="1" id="s1" name="RMPurchaseOMSliveVPN">RMPurchaseOMSliveVPN</stat>
 </suite>
 </statistics>
 <errors>
+<msg timestamp="20210118 15:56:47.058" level="WARN">Keyword 'AppiumLibrary.CapturePageScreenshot' could not be run on failure: WebDriverException: Message: An unknown server-side error occurred while processing the command. Original error: Could not proxy command to the remote server. Original error: socket hang up
+</msg>
 </errors>
 </robot>

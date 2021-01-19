@@ -4,11 +4,14 @@ Library		SikuliLibrary
 *** Keywords ***
 Input text in ${texField} with -> ${data}
 	Wait Until Screen Contain	${texField}	20
+	Sleep   1s
 	SikuliLibrary.Input text	${texField}	${data}
+	
 	
 Input text and Press Enter in ${texField} with -> ${data}
 	Wait Until Screen Contain	${texField}	20
 	Click In	${texField}	${texField}
+	sleep  0.5s
 	SikuliLibrary.Input text	${texField}	${data}
 	SikuliLibrary.Press Special Key	ENTER
 	
@@ -43,6 +46,7 @@ Double Click in Area with Sikuli and Deleted then Input Text-> ${area} ${image} 
 	Double Click In	${area}	${image}
 	Sleep  1s
 	SikuliLibrary.Press Special Key	DELETE	
+	Sleep  0.5s
 	SikuliLibrary.Input text	${area}	${data}
 	SikuliLibrary.Press Special Key	ENTER
 

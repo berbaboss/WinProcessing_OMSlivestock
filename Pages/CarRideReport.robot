@@ -28,7 +28,8 @@ ${Descending}            Descending.png
 ${Execute}               Execute.png
 ${ArrowBtn1}             ArrowBtn1.png
 ${Refer2}                Refer2
-
+${CarNo}                 CarNo.png  
+${CarNumber}
 #Input
 ${ReferCatchNoInput}     KPR6300025
 ${TimeInput}             12:00
@@ -40,7 +41,7 @@ Create Car Ride Report
     # Click in Area with Sikuli -> ${ReferCatchNo} ${File}
     # Click in Area with Sikuli -> ${Dropdown} ${Arrowdown}
     # Click in Area with Sikuli -> ${CatchNo} ${CatchNo}
-     Wait Until Screen Contain	${ReferCatchPlan1}		20
+    Wait Until Screen Contain	${ReferCatchPlan1}		20
     Click in Area with Sikuli -> ${ReferCatchPlan1} ${BrowseBtn}
     Click in Area with Sikuli -> ${ReportDate} ${ReportDate}
     Click in Area with Sikuli -> ${Descending} ${Descending}
@@ -56,6 +57,9 @@ Create Car Ride Report
     sleep  1s
     click Button with Sikuli -> ${OkBtn2} timeout ${3} sec.
     sleep  1s
+    ${CarNumber} =    Get text after image ${CarNo} for another 70 pixels
+    Set Global Variable    ${CarNumber}
+    Log To Console    ${CarNumber}
     click Button with Sikuli -> ${OkBtn2} timeout ${3} sec.
     sleep  1s
     Click Button with Sikuli -> ${ExitBtn} timeout ${3} sec.
@@ -63,3 +67,4 @@ Create Car Ride Report
     Click Button with Sikuli -> ${OkBtn2} timeout ${3} sec.
     Double Click in Area with Sikuli -> ${RideNo} ${RideNo}
     Double Click in Area with Sikuli -> ${OrderMenu} ${OrderMenu}
+    
